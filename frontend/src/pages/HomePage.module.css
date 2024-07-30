@@ -1,0 +1,21 @@
+.homePage {
+    background: #4b0c5d;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.greeting {
+    text-align: left;
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+}
+
+.container{
+    display: flex;
+    justify-content: left;
+    margin: 30px;
+    flex-wrap: wrap;
+}
