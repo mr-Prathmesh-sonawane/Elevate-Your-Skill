@@ -9,3 +9,4 @@ regex==2023.6.3
 google-api-python-client==2.97.0
 python-dotenv==1.0.0
 flask_pymongo==2.3.0
+google-generativeai
