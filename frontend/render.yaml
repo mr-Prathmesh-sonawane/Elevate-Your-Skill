@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: my-app
+    env: node
+    buildCommand: npm run build
+    startCommand: npm start
+    build:
+      publish: ./build
+    envVars:
+      - key: REACT_APP_BACKEND_URL
+        value: https://elevate-your-skill.onrender.com/
