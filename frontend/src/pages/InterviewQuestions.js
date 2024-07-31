@@ -37,7 +37,7 @@ const InterviewQuestions = ({ username }) => {
         setLoading(true);
         setError('');
         try {
-            const response = await axios.post('http://localhost:5000/submit-answer', { username, answer, questionIndex: currentIndex });
+            const response = await axios.post('http://localhost:5000/submit-answer', { answer });
             setFeedback(response.data.feedback);
             setIsNextQuestionReady(true); 
         } catch (error) {
