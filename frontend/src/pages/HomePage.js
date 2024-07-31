@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css';
 import Card from '../components/Card';
 
 function HomePage({ username }) {
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    useEffect(() => {
+        const animated = localStorage.getItem('hasAnimated');
+        if (!animated) {
+            localStorage.setItem('hasAnimated', 'true');
+        } else {
+            setHasAnimated(true);
+        }
+    }, []);
+
     return (
         <div className={styles.homePage}>
-            <p className={styles.greeting}>Hello {username}!</p>
+            <p className={`${styles.greeting} ${hasAnimated ? styles.greetingStatic : ''}`}>Hello {username}!</p>
             <div className={styles.container}>
                 <Link to="/create-video" style={{textDecoration:"none"}}><Card image="report.png" title="Personalized Career Report"/></Link>
                 <Link to="/learning-path" style={{textDecoration:"none"}}><Card image="personalized-learning.png" title="Personalized Learning Path"/></Link>

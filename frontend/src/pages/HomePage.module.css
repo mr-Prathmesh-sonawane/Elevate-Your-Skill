@@ -7,15 +7,44 @@
 }
 
 .greeting {
+    margin-left: 40px;
     text-align: left;
     font-weight: bold;
     font-size: 3rem;
     color: white;
+    animation: textAnimation 2s ease-in-out forwards;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: left;
     margin: 30px;
     flex-wrap: wrap;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
